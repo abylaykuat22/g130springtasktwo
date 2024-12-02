@@ -5,6 +5,7 @@ import kz.bitlab.g130springtasktwo.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -18,8 +19,14 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/second")
-    public String secondPage(Model model) {
-        return "second";
+    @GetMapping("/student/add")
+    public String studentAddPage() {
+        return "student-add";
+    }
+
+    @PostMapping("/student/add")
+    public String studentAdd(Student student) {
+        DBManager.addStudent(student);
+        return "redirect:/";
     }
 }
