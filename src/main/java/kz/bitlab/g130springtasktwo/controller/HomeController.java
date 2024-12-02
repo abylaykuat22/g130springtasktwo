@@ -17,4 +17,9 @@ public class HomeController {
         model.addAttribute("studentter", students);
         return "home";
     }
+
+    @GetMapping("/second")
+    public String secondPage(Model model) {
+        return "second";
+    }
 }

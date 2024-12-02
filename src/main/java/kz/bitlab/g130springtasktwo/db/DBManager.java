@@ -9,7 +9,7 @@ import java.util.List;
 public class DBManager {
 
     @Getter
-    private static List<Student> students = new ArrayList<>();
+    private static final List<Student> students = new ArrayList<>();
 
     static {
         students.add(new Student(1L, "Sanzhar", "S", 80, "B"));
